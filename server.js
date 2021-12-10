@@ -1,23 +1,12 @@
-const express = require("express");
+import express from "express";
+import { APP_PORT } from "./config/index.js";
 const app = express();
-const path = require("path");
-
-const PORT = process.env.PORT || 3000;
-
-app.use(express.static("public"));
-app.set("view engine", "ejs");
+// const APP_PORT = 3000;
 
 app.get("/", (req, res) => {
-  //   res.sendFile(path.resolve(__dirname) + "/index.html");
-  res.render("index", { title: "My Home Page" });
+  res.send("hi");
 });
 
-app.get("/about", (req, res) => {
-  res.render("about");
-});
-
-// console.log(path.resolve(__dirname));
-
-app.listen(PORT, () => {
-  console.log(`Listening on port ${PORT}`);
+app.listen(APP_PORT, () => {
+  console.log(`listening at port ${APP_PORT}`);
 });
