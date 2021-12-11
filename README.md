@@ -7,7 +7,7 @@
 - Registeration
   - Create Routes
     - Controllers
-  - validate Request
+  - validate Request ( Joi package)
   - Autherize Request
   - check if User exist
   - create model

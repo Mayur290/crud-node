@@ -1,7 +1,9 @@
 import express from "express";
-import { APP_PORT } from "./config/index.js";
+import routes from "./routes";
+import { APP_PORT } from "./config";
 const app = express();
-// const APP_PORT = 3000;
+
+app.use("/api", routes);
 
 app.get("/", (req, res) => {
   res.send("hi");
