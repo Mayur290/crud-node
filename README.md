@@ -1,6 +1,4 @@
-# crud-node
-
-#Authentication & Authorization
+# Authentication & Authorization
 
 ## /api/register (POST)
 
@@ -65,7 +63,7 @@
 - Create End Point to delete 'refresh_token' of user
 - access_token required in header, and refresh_token in body
 
-#CRUD
+# CRUD
 
 - Create
 - Read
