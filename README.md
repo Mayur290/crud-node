@@ -77,28 +77,30 @@
 
   - for large use pagination ( mongoose-pagination)
   - to get in some order, .sort({\_id: -1})
-    `sorts on descending order of id` \** Current all images don't have complete paths with server
-    -> updating image attribute of ProductSchema of Product Model, and and one more property besides *timestamps\*
-    ``` image: { type: String, required: true, get: (image)=>{ return`{APP_URL}/${image}`;
-    }}
+    `sorts on descending order of id`
 
-              .
-              .
-              .
-              {timestamps: true, *toJSON: {getters:true}*}
-            ```
-        -> update env
-            ```
-            APP_URL = http://localhost:5000
-            ```
-        -> Create upload api (to serve static file)
-            ```
-              app.use('/uploads', express.static('uploads'))
-            ```
+    - Current all images don't have complete paths with server
+
+      ```
+      -> updating image attribute of ProductSchema of Product Model, and and one more property besides *timestamps\*
+            image: { type: String, required: true, get: (image)=>{ return`{APP_URL}/${image}`;
+            }}
+            .
+            .
+            .
+            {timestamps: true, *toJSON: {getters:true}*}
+
+      -> update env
+          APP_URL = http://localhost:5000
+
+      -> Create upload api (to serve static file)
+          app.use('/uploads', express.static('uploads'))
+      ```
 
   => get Single
-  \*\* As id is duplicate in response , update ProductSchema, Add one more property besides _timestamps_
-  `{timestamps: true, toJSON: {getters:true}, *id:false*}`
+
+  - As id is duplicate in response , update ProductSchema, Add one more property besides _timestamps_
+    `{timestamps: true, toJSON: {getters:true}, *id:false*}`
 
 - Update /api/products/<product_id> (PUT)
 
