@@ -6,7 +6,6 @@ import JwtService from "../../services/JwtService";
 
 const loginController = {
   async login(req, res, next) {
-    console.log(req.body);
     // Validation
     const loginSchema = Joi.object({
       email: Joi.string().email().required(),

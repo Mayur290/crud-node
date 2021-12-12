@@ -4,7 +4,7 @@
 
 ##Steps
 
-- Registeration
+- Registeration /api/register (POST)
 
   - Create Routes
     - Controllers
@@ -26,13 +26,24 @@
 - store in DB
 - generate JWT Token ( jsonwebtoken npm package, {payload, JWT_SECRET, expiry})
 - Send Response
-- Login
+- Login /api/login (POST)
   ```
   {
     "email": "mayurbans98@gmail.com",
       "password":"Mayur123"
   }
   ```
+
+## /api/me (Get)
+
+- gives details of user, require access_token
+- Create middleWare for Authentication
+
+```
+-header
+Autherization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
 - Create
 - Read
 - Update
