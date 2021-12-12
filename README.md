@@ -47,6 +47,15 @@ Autherization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 - Generating Refresh token
   : On Registration & Login
 
+- Creating End Point to get new access_token by sending refresh_token
+  /api/refresh (POST)
+
+  ```
+  {
+    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI1ZGU3MGJlNzEyOTJkYTUxMTc1OTAiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2MzkzMDg5MTIsImV4cCI6MTY3MDg2NjUxMn0.vY2lkKjJgCUe_5A8o3taUzTswZLTcxd7sWC87D0aLwI"
+  }
+  ```
+
 - Create
 - Read
 - Update
