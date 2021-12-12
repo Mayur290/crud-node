@@ -132,6 +132,15 @@ const productController = {
     });
     res.json(document);
   },
+  async index(req, res, next) {
+    let document;
+    try {
+      document = await Product.find().select("-updatedAt -__v");
+    } catch (err) {
+      return next(CustomErrorHandler.serverError());
+    }
+    return res.json(document);
+  },
 };
 
 export default productController;
