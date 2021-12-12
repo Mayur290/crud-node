@@ -44,6 +44,9 @@
 Autherization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
 ```
 
+- Generating Refresh token
+  : On Registration & Login
+
 - Create
 - Read
 - Update
