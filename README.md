@@ -65,7 +65,7 @@
 
 # CRUD
 
-- Create
+- Create /api/products (POST)
 
   - Create Product Model( name*, price*, size*, image*)
   - using 'multer' for multipart data
@@ -73,5 +73,6 @@
   - fs (link, unlink) for handdling files
 
 - Read
-- Update
+- Update /api/products/<id> (PUT)
+  - only admin can update , creating middleware for same
 - Delete
