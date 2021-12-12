@@ -1,5 +1,7 @@
 import Joi from "joi";
 import CustomErrorHandler from "../../services/CustomErrorHandler";
+import bcrypt from "bcrypt";
+import JwtService from "../../services/JwtService";
 import { User } from "../../models";
 
 const registerController = {
@@ -13,7 +15,6 @@ const registerController = {
       repeat_password: Joi.ref("password"),
     });
 
-    console.log(req.body);
     const { error } = registerSchema.validate(req.body);
 
     if (error) {
@@ -22,7 +23,7 @@ const registerController = {
 
     // Check if user exists
     try {
-      const exist = await User.exist({ email: req.body.email });
+      const exist = await User.exists({ email: req.body.email });
       if (exist) {
         return next(
           CustomErrorHandler.alreadyExist("This Email Already Registered")
@@ -33,8 +34,27 @@ const registerController = {
     }
 
     // Hashing password
+    const hashedPassword = await bcrypt.hash(req.body.password, 10);
+    const { name, email, password } = req.body;
 
-    res.json({ msg: "Hello from express" });
+    //prepare model
+    const user = new User({
+      name,
+      email,
+      password: hashedPassword,
+    });
+
+    let access_token;
+    try {
+      const result = await user.save();
+
+      // creating access token
+      access_token = JwtService.sign({ _id: result._id, role: result.role });
+    } catch (err) {
+      return next(err);
+    }
+
+    res.json({ access_token: access_token });
   },
 };
 
