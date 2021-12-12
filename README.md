@@ -95,7 +95,8 @@
             ```
 
   => get Single
-  \*\*
+  \*\* As id is duplicate in response , update ProductSchema, Add one more property besides _timestamps_
+  ` {timestamps: true, toJSON: {getters:true}, *id:false*} `
 
 - Update /api/products/<product_id> (PUT)
   ** only authenticated admin can update , creating middleware for same
