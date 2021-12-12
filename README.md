@@ -1,6 +1,6 @@
 # crud-node
 
-##Steps
+#Authentication & Authorization
 
 ## /api/register (POST)
 
@@ -22,7 +22,7 @@
 - Autherize Request
 - check if User exist
 - create model
-  User-> ( name, email, password, role)
+  User-> ( name*, email*, password\* , role(customer) )
 - store in DB
 - generate JWT Token ( jsonwebtoken npm package, {payload, JWT_SECRET, expiry})
 - Send Response (access_token)
@@ -44,7 +44,7 @@
 
   ```
   -header
-  Autherization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  Autherization: Bearer <access_token>
   ```
 
 - Generating Refresh token
@@ -56,7 +56,7 @@
 
   ```
   {
-    "refresh_token": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx"
+    "refresh_token": "<refresh_token>"
   }
   ```
 
@@ -64,6 +64,8 @@
 
 - Create End Point to delete 'refresh_token' of user
 - access_token required in header, and refresh_token in body
+
+#CRUD
 
 - Create
 - Read
