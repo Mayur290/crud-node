@@ -73,6 +73,12 @@
   - fs (link, unlink) for handdling files
 
 - Read
-- Update /api/products/<id> (PUT)
-  - only admin can update , creating middleware for same
-- Delete
+- Update /api/products/<product_id> (PUT)
+
+  - only authenticated admin can update , creating middleware for same
+  - .findOneAndUpdate({}, {}, {})
+
+- Delete /api/producst/<product_id> (DELETE)
+  - only authenticated admin can delete
+  - .findOneAndRemove({})
+  - const imagePath = document._\_doc_.image;
