@@ -31,7 +31,7 @@
   ```
   {
     "email": "mayurbans98@gmail.com",
-      "password":"Mayur123"
+    "password":"Mayur123"
   }
   ```
 
@@ -66,6 +66,12 @@
 # CRUD
 
 - Create
+
+  - Create Product Model( name*, price*, size*, image*)
+  - using 'multer' for multipart data
+  - files will be uploaded to folder named 'uploads'
+  - fs (link, unlink) for handdling files
+
 - Read
 - Update
 - Delete
