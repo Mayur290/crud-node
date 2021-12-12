@@ -27,6 +27,12 @@
 - generate JWT Token
 - Send Response
 - Login
+  ```
+  {
+    "email": "mayurbans98@gmail.com",
+      "password":"Mayur123"
+  }
+  ```
 - Create
 - Read
 - Update
