@@ -22,6 +22,7 @@
 - Autherize Request
 - check if User exist
 - create model
+  User-> ( name, email, password, role)
 - store in DB
 - generate JWT Token
 - Send Response
