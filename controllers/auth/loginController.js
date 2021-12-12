@@ -49,6 +49,26 @@ const loginController = {
       return next(err);
     }
   },
+  async logout(req, res, next) {
+    //Validation
+    const refreshTokenSchema = Joi.object({
+      refresh_token: Joi.string().required(),
+    });
+
+    const { error } = refreshTokenSchema.validate(req.body);
+
+    if (error) {
+      return next(error);
+    }
+
+    try {
+      await RefreshToken.deleteOne({ token: req.body.refresh_token });
+    } catch (err) {
+      return next(new Error("Something went wrong in DB"));
+    }
+
+    res.json({ status: 1 });
+  },
 };
 
 export default loginController;

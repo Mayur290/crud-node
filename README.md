@@ -1,10 +1,10 @@
 # crud-node
 
-## fields
-
 ##Steps
 
-- Registeration /api/register (POST)
+## /api/register (POST)
+
+- Registeration
 
   - Create Routes
     - Controllers
@@ -25,8 +25,11 @@
   User-> ( name, email, password, role)
 - store in DB
 - generate JWT Token ( jsonwebtoken npm package, {payload, JWT_SECRET, expiry})
-- Send Response
-- Login /api/login (POST)
+- Send Response (access_token)
+
+## /api/login (POST)
+
+- Login
   ```
   {
     "email": "mayurbans98@gmail.com",
@@ -39,22 +42,28 @@
 - gives details of user, require access_token
 - Create middleWare for Authentication
 
-```
--header
-Autherization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
+  ```
+  -header
+  Autherization: Bearer XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+  ```
 
 - Generating Refresh token
   : On Registration & Login
 
+## /api/refresh (POST)
+
 - Creating End Point to get new access_token by sending refresh_token
-  /api/refresh (POST)
 
   ```
   {
-    "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWI1ZGU3MGJlNzEyOTJkYTUxMTc1OTAiLCJyb2xlIjoiY3VzdG9tZXIiLCJpYXQiOjE2MzkzMDg5MTIsImV4cCI6MTY3MDg2NjUxMn0.vY2lkKjJgCUe_5A8o3taUzTswZLTcxd7sWC87D0aLwI"
+    "refresh_token": "XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXx"
   }
   ```
+
+## /api/logout (POST)
+
+- Create End Point to delete 'refresh_token' of user
+- access_token required in header, and refresh_token in body
 
 - Create
 - Read
