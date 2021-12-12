@@ -8,7 +8,7 @@
 
   - Create Routes
     - Controllers
-  - validate Request ( Joi package)
+  - validate Request ( Joi npm package)
 
     ```
     {
@@ -24,7 +24,7 @@
 - create model
   User-> ( name, email, password, role)
 - store in DB
-- generate JWT Token
+- generate JWT Token ( jsonwebtoken npm package, {payload, JWT_SECRET, expiry})
 - Send Response
 - Login
   ```
